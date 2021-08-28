@@ -1,0 +1,32 @@
+---
+title: "repo2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# load tidyverse library
+library(tidyverse)
+# read logbook_2021 file from current directory into age and skip first line
+fred <- read.csv("logbook_2021.csv", skip = 1)
+```
+
+```{r}
+# create vector called age from the column Age in fred
+age <- fred$Age
+```
+
+```{r}
+# check data type for Age
+print(class(age))
+# change Age data into numeric form to allow analysis
+age_num <- as.numeric(age)
+# check data type in age_num
+print(class(age_num))
+# creat histogram of age_num
+hist(age_num)
+```
+
